@@ -1,0 +1,37 @@
+<%= form_with(model: shared_order, local: true) do |form| %>
+  <% if shared_order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shared_order.errors.count, "error") %> prohibited this shared_order from being saved:</h2>
+
+      <ul>
+        <% shared_order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :source_id %>
+    <%= form.select :source_id, options_for_select(Source.all.sort { |a,b| a.name <=> b.name }.map{ |s| [ s.name, s.id ] }) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :starts %>
+    <%= form.datetime_select :starts %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ends %>
+    <%= form.datetime_select :ends %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

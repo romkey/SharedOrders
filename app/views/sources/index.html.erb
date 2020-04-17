@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sources</h1>
+
+<table class='table striped'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Website</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sources.each do |source| %>
+      <tr>
+        <td><%= link_to source.name, source_path(source) %></td>
+        <td><%= link_to source.website, source.website %></td>
+        <td><%= source.address %></td>
+        <td><%= link_to source.phone, "tel:#{source.phone}" %></td>
+        <td><%= source.notes %></td>
+        <td><%= link_to 'Edit', edit_source_path(source), class: 'btn btn-primary' %></td>
+        <td><%= link_to 'Destroy', source, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Source', new_source_path, class: 'btn btn-primary' %>

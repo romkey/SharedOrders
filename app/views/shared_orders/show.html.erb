@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shared_order.name %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @shared_order.source_id %>
+</p>
+
+<p>
+  <strong>Starts:</strong>
+  <%= @shared_order.starts %>
+</p>
+
+<p>
+  <strong>Ends:</strong>
+  <%= @shared_order.ends %>
+</p>
+
+<%= link_to 'Edit', edit_shared_order_path(@shared_order) %> |
+<%= link_to 'Back', shared_orders_path %>

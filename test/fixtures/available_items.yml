@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  price: 9.99
+  source: one
+  unit: 1
+  price_per_unit: 9.99
+
+two:
+  name: MyString
+  price: 9.99
+  source: two
+  unit: 1
+  price_per_unit: 9.99

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @available_item.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @available_item.price %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @available_item.source_id %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @available_item.unit %>
+</p>
+
+<p>
+  <strong>Price per unit:</strong>
+  <%= @available_item.price_per_unit %>
+</p>
+
+<%= link_to 'Edit', edit_available_item_path(@available_item) %> |
+<%= link_to 'Back', available_items_path %>
