@@ -4,4 +4,4 @@ addons:
 dist: bionic
 script:
   - bundle exec rails db:migrate RAILS_ENV=test
-  - bundle exec rails test
+  - bundle exec rails test RAILS_ENV=test
