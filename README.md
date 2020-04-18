@@ -1,24 +1,12 @@
-# README
+# SharedOrders
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Build Status](https://travis-ci.com/romkey/SharedOrders.svg?branch=master)](https://travis-ci.com/romkey/SharedOrders)
 
-Things you may want to cover:
+This is a Rails app designed to help groups of people share orders from wholesale restaurant distributors.
 
-* Ruby version
+It is currently under development and not yet suitable for use.
 
-* System dependencies
+## License
 
-* Configuration
+Written by [John Romkey](https://romkey.com) and licensed under the [MIT License](https://romkey.mit-license.org).
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

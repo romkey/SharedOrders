@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= form.label :source_id %>
-    <%= form.text_field :source_id %>
+    <%= form.select :source_id, options_for_select(Source.all.sort { |a,b| a.name <=> b.name }.map{ |s| [ s.name, s.id ] }) %>
   </div>
 
   <div class="field">
     <%= form.label :unit %>
-    <%= form.number_field :unit %>
+    <%= form.select :unit, AvailableItem.units.keys %>
   </div>
 
   <div class="field">

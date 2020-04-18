@@ -2,6 +2,7 @@ language: ruby
 addons:
   postgresql: 11
 dist: bionic
+bundler_args: --without development,production
 before_install:
   - gem install bundler
 before_script:
