@@ -7,6 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Source</th>
+      <th>Status</th>
       <th>Starts</th>
       <th>Ends</th>
       <th colspan="3"></th>
@@ -18,6 +19,7 @@
       <tr>
         <td><%= link_to shared_order.name, shared_order %></td>
         <td><%= link_to shared_order.source.name, shared_order.source %></td>
+        <td><%= shared_order.status %></td>
         <td><%= shared_order.starts %></td>
         <td><%= shared_order.ends %></td>
         <td><%= link_to 'Edit', edit_shared_order_path(shared_order), class: 'btn btn-primary' %></td>

@@ -59,6 +59,7 @@ gem 'will_paginate-bootstrap4'
 gem 'font-awesome-rails'
 
 gem 'devise', '>= 4.7.1'
+gem 'omniauth', '>= 1.9.1'
 gem 'ginjo-omniauth-slack', require: 'omniauth-slack'
 gem 'cancancan'
 gem 'dotenv-rails'

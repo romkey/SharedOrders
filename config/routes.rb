@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :order_items
   devise_for :users, controllers: { omniauth_callbacks: 'callbacks' }
 
   resources :available_items

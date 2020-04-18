@@ -10,22 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_17_211655) do
+ActiveRecord::Schema.define(version: 2020_04_18_041816) do
 
 # Could not dump table "available_items" because of following StandardError
 #   Unknown type 'available_item_unit' for column 'unit'
 
-  create_table "shared_orders", force: :cascade do |t|
-    t.string "name"
-    t.integer "source_id", null: false
-    t.datetime "starts"
-    t.datetime "ends"
+  create_table "order_items", force: :cascade do |t|
+    t.integer "shared_order_id", null: false
+    t.integer "user_id", null: false
+    t.integer "min_quantity", null: false
+    t.integer "max_quantity", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["ends"], name: "index_shared_orders_on_ends"
-    t.index ["name"], name: "index_shared_orders_on_name"
-    t.index ["source_id"], name: "index_shared_orders_on_source_id"
-    t.index ["starts"], name: "index_shared_orders_on_starts"
+    t.index "\"shared_order\"", name: "index_order_items_on_shared_order"
+    t.index "\"user\"", name: "index_order_items_on_user"
+    t.index ["shared_order_id"], name: "index_order_items_on_shared_order_id"
+    t.index ["user_id"], name: "index_order_items_on_user_id"
+  end
+
+# Could not dump table "shared_orders" because of following StandardError
+#   Unknown type 'shared_order_status' for column 'status'
+
+  create_table "shared_orders_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "shared_order_id"
+    t.index ["shared_order_id"], name: "index_shared_orders_users_on_shared_order_id"
+    t.index ["user_id"], name: "index_shared_orders_users_on_user_id"
   end
 
   create_table "sources", force: :cascade do |t|
