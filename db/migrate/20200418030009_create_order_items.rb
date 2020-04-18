@@ -8,7 +8,5 @@ class CreateOrderItems < ActiveRecord::Migration[6.0]
 
       t.timestamps null: false
     end
-    add_index :order_items, :shared_order
-    add_index :order_items, :user
   end
 end
