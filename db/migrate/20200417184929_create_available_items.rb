@@ -3,15 +3,7 @@ class CreateAvailableItems < ActiveRecord::Migration[6.0]
     execute <<-SQL
       CREATE TYPE available_item_unit AS ENUM ('case', 'pound', 'item');
     SQL
-  end
 
-  def down
-    execute <<-SQL
-      DROP TYPE available_item_unit;
-    SQL
-  end
-
-  def change
     create_table :available_items do |t|
       t.string :name, null: false
       t.decimal :price, precision: 4, scale: 2, null: false
@@ -24,5 +16,14 @@ class CreateAvailableItems < ActiveRecord::Migration[6.0]
     add_column :available_items, :unit, :available_item_unit
 
     add_index :available_items, :name, unique: true
+  end
+
+  def down
+    remove_table :available_items
+    remove_index :available_items, :name, unique: true
+
+    execute <<-SQL
+      DROP TYPE available_item_unit;
+    SQL
   end
 end
