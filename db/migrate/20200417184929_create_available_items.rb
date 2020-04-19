@@ -1,8 +1,10 @@
 class CreateAvailableItems < ActiveRecord::Migration[6.0]
   def up
-    execute <<-SQL
-      CREATE TYPE available_item_unit AS ENUM ('case', 'pound', 'item');
-    SQL
+    unless Rails.env.development?
+      execute <<-SQL
+              CREATE TYPE available_item_unit AS ENUM ('case', 'pound', 'item');
+      SQL
+    end
 
     create_table :available_items do |t|
       t.string :name, null: false
@@ -20,8 +22,10 @@ class CreateAvailableItems < ActiveRecord::Migration[6.0]
     remove_table :available_items
     remove_index :available_items, :name, unique: true
 
-    execute <<-SQL
-      DROP TYPE available_item_unit;
-    SQL
+    unless Rails.env.development?
+      execute <<-SQL
+        DROP TYPE available_item_unit;
+      SQL
+    end
   end
 end
