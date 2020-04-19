@@ -1,15 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: carrot
   price: 9.99
   source: one
-  unit: 1
-  price_per_unit: 9.99
+  unit: pound
+  price_per_unit: 0.60
 
 two:
-  name: MyString
-  price: 9.99
+  name: yeast
+  price: 2.00
   source: two
-  unit: 1
-  price_per_unit: 9.99
+  unit: item
+  price_per_unit: 2.00
