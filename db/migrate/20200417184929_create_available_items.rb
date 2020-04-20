@@ -8,9 +8,9 @@ class CreateAvailableItems < ActiveRecord::Migration[6.0]
 
     create_table :available_items do |t|
       t.string :name, null: false
-      t.decimal :price, precision: 4, scale: 2, null: false
+      t.decimal :price, precision: 6, scale: 2, null: false
       t.references :source, null: false, foreign_key: true
-      t.decimal :price_per_unit, precision: 4, scale: 2, null: false
+      t.decimal :price_per_unit, precision: 6, scale: 2, null: false
       t.string :unit, null: false
       t.timestamps
     end

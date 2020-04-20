@@ -14,9 +14,9 @@ ActiveRecord::Schema.define(version: 2020_04_18_041816) do
 
   create_table "available_items", force: :cascade do |t|
     t.string "name", null: false
-    t.decimal "price", precision: 4, scale: 2, null: false
+    t.decimal "price", precision: 6, scale: 2, null: false
     t.integer "source_id", null: false
-    t.decimal "price_per_unit", precision: 4, scale: 2, null: false
+    t.decimal "price_per_unit", precision: 6, scale: 2, null: false
     t.string "unit", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
