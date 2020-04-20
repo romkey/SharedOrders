@@ -102,5 +102,10 @@ ActiveRecord::Schema.define(version: 2020_04_18_041816) do
   end
 
   add_foreign_key "available_items", "sources"
+  add_foreign_key "order_items", "available_items", column: "available_items_id"
+  add_foreign_key "order_items", "shared_orders"
+  add_foreign_key "order_items", "users"
   add_foreign_key "shared_orders", "sources"
+  add_foreign_key "shared_orders_users", "shared_orders"
+  add_foreign_key "shared_orders_users", "users"
 end
