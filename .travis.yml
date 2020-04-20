@@ -1,13 +1,26 @@
 language: ruby
+
 addons:
   postgresql: 11
+
 dist: bionic
+
+cache:
+  bundler: true
+  directories:
+    - node_modules
+  yarn: true
+  
 bundler_args: --without development,production
+
 before_install:
   - gem install bundler
+
+#  - psql -c 'create database travis_ci_test;' -U postgres
 before_script:
   - cp config/database.yml.travis config/database.yml
-  - psql -c 'create database travis_ci_test;' -U postgres
+  - bundle exec rails db:create db:migrate RAILS_ENV=test
+
 script:
-  - bundle exec rails db:migrate RAILS_ENV=test
+  - bundle exec rails webpacker:compile
   - bundle exec rails test RAILS_ENV=test
