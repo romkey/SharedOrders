@@ -15,3 +15,11 @@ two:
   source: two
   unit: item
   price_per_unit: 2.00
+
+three:
+  id: 3
+  name: gluten-free gluten
+  price: 1000.01
+  source: two
+  unit: case
+  price_per_unit: 20

@@ -43,7 +43,7 @@ class AvailableItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should destroy available_item" do
     assert_difference('AvailableItem.count', -1) do
-      delete available_item_url(@available_item)
+      delete available_item_url(available_items(:three))
     end
 
     assert_redirected_to available_items_url

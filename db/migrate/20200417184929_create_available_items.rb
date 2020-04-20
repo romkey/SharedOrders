@@ -15,7 +15,7 @@ class CreateAvailableItems < ActiveRecord::Migration[6.0]
       t.timestamps
     end
 
-    add_index :available_items, :name, unique: true
+    add_index :available_items, :name
   end
 
   def down

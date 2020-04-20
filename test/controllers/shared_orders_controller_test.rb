@@ -43,7 +43,7 @@ class SharedOrdersControllerTest < ActionDispatch::IntegrationTest
 
   test "should destroy shared_order" do
     assert_difference('SharedOrder.count', -1) do
-      delete shared_order_url(@shared_order)
+      delete shared_order_url(shared_orders(:three))
     end
 
     assert_redirected_to shared_orders_url
