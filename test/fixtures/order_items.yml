@@ -1,14 +1,14 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  shared_order_users: one
+  shared_order: one
   user: one
   available_item: one
   min_quantity: 1
   max_quantity: 3
 
 two:
-  shared_orders_users: two
+  shared_order: two
   user: two
   available_item: two
   min_quantity: 2

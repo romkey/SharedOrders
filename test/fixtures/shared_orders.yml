@@ -3,13 +3,11 @@
 one:
   name: Late Spring Order
   source: one
-  shared_orders_users: one
   starts: 2020-04-17 10:03:11
   ends: 2020-04-17 10:03:11
 
 two:
   name: Early Summer Order
   source: two
-  shared_orders_users: two
   starts: 2020-04-17 10:03:11
   ends: 2020-04-17 10:03:11
