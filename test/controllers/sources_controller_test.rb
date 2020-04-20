@@ -3,6 +3,7 @@ require 'test_helper'
 class SourcesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @source = sources(:one)
+    sign_in User.find 1
   end
 
   test "should get index" do

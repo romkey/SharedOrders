@@ -3,6 +3,7 @@ require 'test_helper'
 class SharedOrdersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @shared_order = shared_orders(:one)
+    sign_in User.find 1
   end
 
   test "should get index" do

@@ -3,6 +3,7 @@ require 'test_helper'
 class OrderItemsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @order_item = order_items(:one)
+    sign_in User.find 1
   end
 
   test "should get index" do
