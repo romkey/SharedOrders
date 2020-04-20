@@ -43,7 +43,7 @@ class SourcesControllerTest < ActionDispatch::IntegrationTest
 
   test "should destroy source" do
     assert_difference('Source.count', -1) do
-      delete source_url(@source)
+      delete source_url(sources(:three))
     end
 
     assert_redirected_to sources_url

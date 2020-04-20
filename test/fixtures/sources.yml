@@ -13,3 +13,10 @@ two:
   address: Camp Crystal Lake, Portland, OR
   phone: 555-555-1213
   notes: Spanakopita!
+
+three:
+  name: Everything Coming Up Dumplings
+  website: https://dumplings.org/
+  address: Dough Town, USA
+  phone: 555-555-1214
+  notes: bao bao bao
