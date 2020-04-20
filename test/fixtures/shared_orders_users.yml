@@ -1,7 +1,7 @@
 one:
-  user: one
-  shared_order: one
+  user_id: 1
+  shared_order_id: 1
 
 two:
-  user: two
-  shared_order: two
+  user_id: 2
+  shared_order_id: 2
