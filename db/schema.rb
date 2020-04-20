@@ -27,10 +27,12 @@ ActiveRecord::Schema.define(version: 2020_04_18_041816) do
   create_table "order_items", force: :cascade do |t|
     t.integer "shared_order_id", null: false
     t.integer "user_id", null: false
+    t.integer "available_items_id", null: false
     t.integer "min_quantity", null: false
     t.integer "max_quantity", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["available_items_id"], name: "index_order_items_on_available_items_id"
     t.index ["shared_order_id"], name: "index_order_items_on_shared_order_id"
     t.index ["user_id"], name: "index_order_items_on_user_id"
   end
