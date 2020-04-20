@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 2020_04_18_041816) do
   create_table "order_items", force: :cascade do |t|
     t.integer "shared_order_id", null: false
     t.integer "user_id", null: false
-    t.integer "available_items_id", null: false
+    t.integer "available_item_id", null: false
     t.integer "min_quantity", null: false
     t.integer "max_quantity", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["available_items_id"], name: "index_order_items_on_available_items_id"
+    t.index ["available_item_id"], name: "index_order_items_on_available_item_id"
     t.index ["shared_order_id"], name: "index_order_items_on_shared_order_id"
     t.index ["user_id"], name: "index_order_items_on_user_id"
   end
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 2020_04_18_041816) do
   end
 
   add_foreign_key "available_items", "sources"
-  add_foreign_key "order_items", "available_items", column: "available_items_id"
+  add_foreign_key "order_items", "available_items"
   add_foreign_key "order_items", "shared_orders"
   add_foreign_key "order_items", "users"
   add_foreign_key "shared_orders", "sources"
