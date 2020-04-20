@@ -3,13 +3,13 @@
 one:
   shared_order_id: 1
   user_id: 1
-  available_item_id: 1
+  available_items_id: 1
   min_quantity: 1
   max_quantity: 3
 
 two:
   shared_order_id: 2
   user_id: 2
-  available_item_id: 2
+  available_items_id: 2
   min_quantity: 2
   max_quantity: 5
