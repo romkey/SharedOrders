@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class AvailableItemsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::ControllerHelpers
+
   setup do
     @available_item = available_items(:one)
     sign_in User.find 1

@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class SharedOrdersControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::ControllerHelpers
+
   setup do
     @shared_order = shared_orders(:one)
     sign_in User.find 1

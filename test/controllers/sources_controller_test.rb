@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class SourcesControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::ControllerHelpers
+
   setup do
     @source = sources(:one)
     sign_in User.find 1
