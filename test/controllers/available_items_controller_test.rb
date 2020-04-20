@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class AvailableItemsControllerTest < ActionDispatch::IntegrationTest
-  include Devise::Test::ControllerHelpers
+  include Devise::Test::IntegrationHelpers
 
   setup do
     @available_item = available_items(:one)
