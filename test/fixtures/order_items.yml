@@ -3,13 +3,13 @@
 one:
   shared_order: one
   user: one
-  available_items: two
+  available_item: two
   min_quantity: 1
   max_quantity: 3
 
 two:
   shared_order: two
   user: two
-  available_items: two
+  available_item: two
   min_quantity: 2
   max_quantity: 5
