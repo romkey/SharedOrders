@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_21_040255) do
+ActiveRecord::Schema.define(version: 2020_04_21_042057) do
 
   create_table "available_items", force: :cascade do |t|
     t.string "name", null: false
-    t.decimal "price", precision: 6, scale: 2, null: false
+    t.decimal "price", precision: 8, scale: 2, null: false
     t.integer "source_id", null: false
-    t.decimal "price_per_unit", precision: 6, scale: 2, null: false
+    t.decimal "price_per_unit", precision: 8, scale: 2, null: false
     t.string "unit", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
