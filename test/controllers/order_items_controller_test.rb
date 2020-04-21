@@ -20,7 +20,7 @@ class OrderItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create order_item" do
     assert_difference('OrderItem.count') do
-      post order_items_url, params: { order_item: { max_quantity: @order_item.max_quantity, min_quantity: @order_item.min_quantity,  shared_order: shared_orders(:one), user: users(:one), available_item: available_items(:one) } }
+      post order_items_url, params: { order_item: { max_quantity: @order_item.max_quantity, min_quantity: @order_item.min_quantity,  shared_order_id: 1, user_id: 1, available_item_id: 1 } }
     end
 
     assert_redirected_to order_item_url(OrderItem.last)
@@ -37,7 +37,7 @@ class OrderItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update order_item" do
-    patch order_item_url(@order_item), params: { order_item: { max_quantity: @order_item.max_quantity, min_quantity: @order_item.min_quantity, shared_order: shared_orders(:one), user: users(:one), available_item: available_items(:one) } }
+    patch order_item_url(@order_item), params: { order_item: { max_quantity: @order_item.max_quantity, min_quantity: @order_item.min_quantity, shared_order_id: 1, user_id: 1, available_item_id: 1 } }
     assert_redirected_to order_item_url(@order_item)
   end
 

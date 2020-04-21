@@ -20,7 +20,7 @@ class AvailableItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create available_item" do
     assert_difference('AvailableItem.count') do
-      post available_items_url, params: { available_item: { name: @available_item.name, price: @available_item.price, price_per_unit: @available_item.price_per_unit, source_id: @available_item.source_id, unit: @available_item.unit } }
+      post available_items_url, params: { available_item: { name: @available_item.name, price: @available_item.price, price_per_unit: @available_item.price_per_unit, source_id: @available_item.source_id, unit: @available_item.unit, sku: @available_item.sku } }
     end
 
     assert_redirected_to available_item_url(AvailableItem.last)
@@ -37,7 +37,7 @@ class AvailableItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update available_item" do
-    patch available_item_url(@available_item), params: { available_item: { name: @available_item.name, price: @available_item.price, price_per_unit: @available_item.price_per_unit, source_id: @available_item.source_id, unit: @available_item.unit } }
+    patch available_item_url(@available_item), params: { available_item: { name: @available_item.name, price: @available_item.price, price_per_unit: @available_item.price_per_unit, source_id: @available_item.source_id, unit: @available_item.unit, sku: @available_item.sku } }
     assert_redirected_to available_item_url(@available_item)
   end
 

@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>SKU</th>
       <th>Price</th>
       <th>Source</th>
       <th>Unit</th>
@@ -18,6 +19,7 @@
     <% @available_items.each do |available_item| %>
       <tr>
         <td><%= available_item.name %></td>
+        <td><%= available_item.sku %></td>
         <td><%= available_item.price %></td>
         <td><%= available_item.source_id %></td>
         <td><%= available_item.unit %></td>

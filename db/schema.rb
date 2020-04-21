@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_18_041816) do
+ActiveRecord::Schema.define(version: 2020_04_21_040255) do
 
   create_table "available_items", force: :cascade do |t|
     t.string "name", null: false
@@ -20,7 +20,9 @@ ActiveRecord::Schema.define(version: 2020_04_18_041816) do
     t.string "unit", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "sku", default: "", null: false
     t.index ["name"], name: "index_available_items_on_name"
+    t.index ["sku"], name: "index_available_items_on_sku"
     t.index ["source_id"], name: "index_available_items_on_source_id"
   end
 

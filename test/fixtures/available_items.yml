@@ -7,6 +7,7 @@ one:
   source: one
   unit: pound
   price_per_unit: 0.60
+  sku: 666
 
 two:
   id: 2
@@ -15,6 +16,7 @@ two:
   source: two
   unit: item
   price_per_unit: 2.00
+  sku: 011235813
 
 three:
   id: 3
@@ -23,3 +25,4 @@ three:
   source: two
   unit: case
   price_per_unit: 20
+  sku: foo

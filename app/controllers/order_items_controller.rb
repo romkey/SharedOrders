@@ -25,7 +25,6 @@ class OrderItemsController < ApplicationController
   # POST /order_items.json
   def create
     @order_item = OrderItem.new(order_item_params)
-
     respond_to do |format|
       if @order_item.save
         format.html { redirect_to @order_item, notice: 'Order item was successfully created.' }
@@ -42,6 +41,8 @@ class OrderItemsController < ApplicationController
   def update
     respond_to do |format|
       if @order_item.update(order_item_params)
+    puts 'cont'
+        pp @order_item
         format.html { redirect_to @order_item, notice: 'Order item was successfully updated.' }
         format.json { render :show, status: :ok, location: @order_item }
       else
@@ -69,6 +70,6 @@ class OrderItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_item_params
-      params.require(:order_item).permit(:shared_order, :user, :min_quantity, :max_quantity)
+      params.require(:order_item).permit(:shared_order, :user, :min_quantity, :max_quantity, :available_item)
     end
 end
