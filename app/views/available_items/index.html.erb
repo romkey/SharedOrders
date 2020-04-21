@@ -18,15 +18,14 @@
   <tbody>
     <% @available_items.each do |available_item| %>
       <tr>
-        <td><%= available_item.name %></td>
+        <td><%= link_to available_item.name, available_item %></td>
         <td><%= available_item.sku %></td>
         <td><%= available_item.price %></td>
-        <td><%= available_item.source_id %></td>
+        <td><%= available_item.source.name %></td>
         <td><%= available_item.unit %></td>
         <td><%= available_item.price_per_unit %></td>
-        <td><%= link_to 'Show', available_item %></td>
-        <td><%= link_to 'Edit', edit_available_item_path(available_item) %></td>
-        <td><%= link_to 'Destroy', available_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_available_item_path(available_item), class: 'btn btn-primary' %></td>
+        <td><%= link_to 'Destroy', available_item, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New Available Item', new_available_item_path %>
+<%= link_to 'New Available Item', new_available_item_path, class: 'btn btn-primary' %>
