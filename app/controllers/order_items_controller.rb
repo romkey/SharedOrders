@@ -25,6 +25,11 @@ class OrderItemsController < ApplicationController
   # POST /order_items.json
   def create
     @order_item = OrderItem.new(order_item_params)
+
+    @order_item.user = current_user
+
+    pp @order_item
+
     respond_to do |format|
       if @order_item.save
         format.html { redirect_to @order_item, notice: 'Order item was successfully created.' }
@@ -70,6 +75,6 @@ class OrderItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_item_params
-      params.require(:order_item).permit(:shared_order, :user, :min_quantity, :max_quantity, :available_item)
+      params.require(:order_item).permit(:shared_order_id, :min_quantity, :max_quantity, :available_item_id)
     end
 end

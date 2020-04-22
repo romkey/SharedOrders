@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2020_04_21_042057) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "available_items", force: :cascade do |t|
     t.string "name", null: false
-    t.decimal "price", precision: 8, scale: 2, null: false
-    t.integer "source_id", null: false
-    t.decimal "price_per_unit", precision: 8, scale: 2, null: false
+    t.decimal "price", precision: 8, null: false
+    t.bigint "source_id", null: false
+    t.decimal "price_per_unit", precision: 8, null: false
     t.string "unit", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -27,9 +30,9 @@ ActiveRecord::Schema.define(version: 2020_04_21_042057) do
   end
 
   create_table "order_items", force: :cascade do |t|
-    t.integer "shared_order_id", null: false
-    t.integer "user_id", null: false
-    t.integer "available_item_id", null: false
+    t.bigint "shared_order_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "available_item_id", null: false
     t.integer "min_quantity", null: false
     t.integer "max_quantity", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -41,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_04_21_042057) do
 
   create_table "shared_orders", force: :cascade do |t|
     t.string "name"
-    t.integer "source_id", null: false
+    t.bigint "source_id", null: false
     t.datetime "starts"
     t.datetime "ends"
     t.datetime "created_at", precision: 6, null: false
@@ -55,8 +58,8 @@ ActiveRecord::Schema.define(version: 2020_04_21_042057) do
   end
 
   create_table "shared_orders_users", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "shared_order_id"
+    t.bigint "user_id"
+    t.bigint "shared_order_id"
     t.index ["shared_order_id"], name: "index_shared_orders_users_on_shared_order_id"
     t.index ["user_id"], name: "index_shared_orders_users_on_user_id"
   end
