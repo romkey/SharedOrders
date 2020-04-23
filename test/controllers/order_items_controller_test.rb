@@ -5,7 +5,7 @@ class OrderItemsControllerTest < ActionDispatch::IntegrationTest
 
   setup do
     @order_item = order_items(:one)
-    sign_in User.find 1
+    sign_in users(:one)
   end
 
   test "should get index" do
@@ -20,7 +20,7 @@ class OrderItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create order_item" do
     assert_difference('OrderItem.count') do
-      post order_items_url, params: { order_item: { max_quantity: @order_item.max_quantity, min_quantity: @order_item.min_quantity,  shared_order_id: 1, user_id: 1, available_item_id: 1 } }
+      post order_items_url, params: { order_item: { max_quantity: @order_item.max_quantity, min_quantity: @order_item.min_quantity,  shared_order: shared_orders(:one), available_item: available_items(:one) } }
     end
 
     assert_redirected_to order_item_url(OrderItem.last)
@@ -37,7 +37,7 @@ class OrderItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update order_item" do
-    patch order_item_url(@order_item), params: { order_item: { max_quantity: @order_item.max_quantity, min_quantity: @order_item.min_quantity, shared_order_id: 1, user_id: 1, available_item_id: 1 } }
+    patch order_item_url(@order_item), params: { order_item: { max_quantity: @order_item.max_quantity, min_quantity: @order_item.min_quantity, shared_order: shared_orders(:one), available_item: available_items(:one) } }
     assert_redirected_to order_item_url(@order_item)
   end
 
