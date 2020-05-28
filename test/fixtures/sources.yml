@@ -1,15 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  website: MyString
-  address: MyString
-  phone: MyString
-  notes: MyString
+  name: Restaurant Supply Place
+  website: https://restaurantsupplyplace.nope
+  address: 23 Elm Street, Portland, OR
+  phone: 555-555-1212
+  notes: awesome
 
 two:
-  name: MyString
-  website: MyString
-  address: MyString
-  phone: MyString
-  notes: MyString
+  name: Mediterranean Import Company
+  website: https://mediterraneanimportcompany.com/
+  address: 42 The Answer, Portland, OR
+  phone: 555-555-1213
+  notes: excellent pasta

@@ -13,12 +13,7 @@
 
   <div class="field">
     <%= form.label :shared_order %>
-    <%= form.text_field :shared_order %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user %>
-    <%= form.text_field :user %>
+    <%= form.select :shared_order_id, options_for_select(Source.all.sort { |a,b| a.name <=> b.name }.map{ |s| [ s.name, s.id ] }) %>
   </div>
 
   <div class="field">

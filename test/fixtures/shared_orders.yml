@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Mid Spring
   source: one
   starts: 2020-04-17 10:03:11
   ends: 2020-04-17 10:03:11
 
 two:
-  name: MyString
+  name: Early Summer
   source: two
   starts: 2020-04-17 10:03:11
   ends: 2020-04-17 10:03:11
