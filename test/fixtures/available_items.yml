@@ -1,15 +1,28 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  id: 1
+  name: carrot
   price: 9.99
   source: one
-  unit: 1
-  price_per_unit: 9.99
+  unit: pound
+  price_per_unit: 0.60
+  sku: 666
 
 two:
-  name: MyString
-  price: 9.99
+  id: 2
+  name: yeast
+  price: 2.00
   source: two
-  unit: 1
-  price_per_unit: 9.99
+  unit: item
+  price_per_unit: 2.00
+  sku: 011235813
+
+three:
+  id: 3
+  name: gluten-free gluten
+  price: 1000.01
+  source: two
+  unit: case
+  price_per_unit: 20
+  sku: foo

@@ -1,15 +1,22 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: Restaurant Supply Place
-  website: https://restaurantsupplyplace.nope
-  address: 23 Elm Street, Portland, OR
+  name: Restaurant Supply Market
+  website: https://restaurantsupplymarket.com/
+  address: Elm Street, Portland, OR
   phone: 555-555-1212
-  notes: awesome
+  notes: cheap eggs
 
 two:
-  name: Mediterranean Import Company
-  website: https://mediterraneanimportcompany.com/
-  address: 42 The Answer, Portland, OR
+  name: Mediterranean Supplies
+  website: https://mediterraneansupplies.com/
+  address: Camp Crystal Lake, Portland, OR
   phone: 555-555-1213
-  notes: excellent pasta
+  notes: Spanakopita!
+
+three:
+  name: Everything Coming Up Dumplings
+  website: https://dumplings.org/
+  address: Dough Town, USA
+  phone: 555-555-1214
+  notes: bao bao bao

@@ -1,13 +1,25 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: Mid Spring
+  id: 1
+  name: Late Spring Order
   source: one
+  status: completed
   starts: 2020-04-17 10:03:11
   ends: 2020-04-17 10:03:11
 
 two:
-  name: Early Summer
+  id: 2
+  name: Early Summer Order
   source: two
+  status: inactive
+  starts: 2020-04-17 10:03:11
+  ends: 2020-04-17 10:03:11
+
+three:
+  id: 3
+  name: Late Summer Order
+  source: two
+  status: cancelled
   starts: 2020-04-17 10:03:11
   ends: 2020-04-17 10:03:11

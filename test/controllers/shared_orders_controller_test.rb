@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class SharedOrdersControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @shared_order = shared_orders(:one)
+    sign_in User.find 1
   end
 
   test "should get index" do
@@ -40,7 +43,7 @@ class SharedOrdersControllerTest < ActionDispatch::IntegrationTest
 
   test "should destroy shared_order" do
     assert_difference('SharedOrder.count', -1) do
-      delete shared_order_url(@shared_order)
+      delete shared_order_url(shared_orders(:three))
     end
 
     assert_redirected_to shared_orders_url

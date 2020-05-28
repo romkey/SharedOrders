@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class OrderItemsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @order_item = order_items(:one)
+    sign_in users(:one)
   end
 
   test "should get index" do
@@ -17,7 +20,7 @@ class OrderItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create order_item" do
     assert_difference('OrderItem.count') do
-      post order_items_url, params: { order_item: { max_quantity: @order_item.max_quantity, min_quantity: @order_item.min_quantity, shared_order: @order_item.shared_order, user: @order_item.user } }
+      post order_items_url, params: { order_item: { max_quantity: @order_item.max_quantity, min_quantity: @order_item.min_quantity,  shared_order: shared_orders(:one), available_item: available_items(:one) } }
     end
 
     assert_redirected_to order_item_url(OrderItem.last)
@@ -34,7 +37,7 @@ class OrderItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update order_item" do
-    patch order_item_url(@order_item), params: { order_item: { max_quantity: @order_item.max_quantity, min_quantity: @order_item.min_quantity, shared_order: @order_item.shared_order, user: @order_item.user } }
+    patch order_item_url(@order_item), params: { order_item: { max_quantity: @order_item.max_quantity, min_quantity: @order_item.min_quantity, shared_order: shared_orders(:one), available_item: available_items(:one) } }
     assert_redirected_to order_item_url(@order_item)
   end
 

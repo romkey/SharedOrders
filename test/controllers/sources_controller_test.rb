@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class SourcesControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @source = sources(:one)
+    sign_in User.find 1
   end
 
   test "should get index" do
@@ -40,7 +43,7 @@ class SourcesControllerTest < ActionDispatch::IntegrationTest
 
   test "should destroy source" do
     assert_difference('Source.count', -1) do
-      delete source_url(@source)
+      delete source_url(sources(:three))
     end
 
     assert_redirected_to sources_url
